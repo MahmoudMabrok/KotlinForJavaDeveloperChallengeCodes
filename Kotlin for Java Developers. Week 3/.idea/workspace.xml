@@ -48,33 +48,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.TestTask4SmartPassengers.test03">
+  <component name="RunManager" selected="Gradle.TestTask5TheMostFrequentTripDurationPeriod">
     <configuration name="TestTask2FaithfulPassengers" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="--tests &quot;taxipark.TestTask2FaithfulPassengers&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":Taxi_Park-Task:cleanTest" />
-            <option value=":Taxi_Park-Task:test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="TestTask2FaithfulPassengers.test5" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;taxipark.TestTask2FaithfulPassengers.test5&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -129,6 +109,26 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="TestTask5TheMostFrequentTripDurationPeriod" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;taxipark.TestTask5TheMostFrequentTripDurationPeriod&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":Taxi_Park-Task:cleanTest" />
+            <option value=":Taxi_Park-Task:test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="taxipark.TestKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="Taxi_Park-Task_main" />
       <option name="VM_PARAMETERS" />
@@ -144,11 +144,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.TestTask5TheMostFrequentTripDurationPeriod" />
+        <item itemvalue="Kotlin.taxipark.TestKt" />
         <item itemvalue="Gradle.TestTask4SmartPassengers.test03" />
         <item itemvalue="Gradle.TestTask3FrequentPassengers" />
         <item itemvalue="Gradle.TestTask2FaithfulPassengers" />
-        <item itemvalue="Kotlin.taxipark.TestKt" />
-        <item itemvalue="Gradle.TestTask2FaithfulPassengers.test5" />
       </list>
     </recent_temporary>
   </component>

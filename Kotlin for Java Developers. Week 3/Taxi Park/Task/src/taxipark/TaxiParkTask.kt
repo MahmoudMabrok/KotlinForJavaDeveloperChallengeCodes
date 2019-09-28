@@ -50,10 +50,10 @@ fun TaxiPark.findFrequentPassengers(driver: Driver): Set<Passenger> {
 fun TaxiPark.findSmartPassengers(): Set<Passenger> {
     // filter trips to discounted trip  then flat all passengers
     return this.trips
-            .filter { it.discount != null }
+            .filter { it.discount != null } // filter that has discount
             .flatMap { it.passengers } // map trip into pass then flat it
             .groupBy { it} // group each pass with its trips
-            .maxBy { (_, t) -> t.size} // get max one by max of count of trips
+            .maxBy { (_, t) -> t.size} // get max one by max of count of trips(size represent n trip)
             ?.value!! // get value
             .toSet() // convert to set
 }
@@ -63,7 +63,21 @@ fun TaxiPark.findSmartPassengers(): Set<Passenger> {
  * Return any period if many are the most frequent, return `null` if there're no trips.
  */
 fun TaxiPark.findTheMostFrequentTripDurationPeriod(): IntRange? {
-    TODO()
+    // get all duration by map trip by duration
+    val durations = this.trips.map { it.duration }
+    // divide them by range ( 0..9 -> 0, 10..19 -> 1 and so on )
+    val g = durations.groupBy { it / 10 }
+    val maxed = g.maxBy { ( _,list ) -> list.size }?.key
+    var res:IntRange?
+    // make range or retrun null
+    if (maxed == null){
+        res = null
+    }else{
+        // for 0 it will be 0..9 and so on.
+        res = (maxed*10) until ((maxed+1)*10)
+    }
+    return res
+
 }
 
 /*

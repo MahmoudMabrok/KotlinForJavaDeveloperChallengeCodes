@@ -30,7 +30,7 @@ fun main() {
             trip(3, listOf(11, 9), duration = 20, distance = 22.0),
             trip(1, listOf(3, 4), duration = 18, distance = 19.0),
             trip(3, listOf(4, 7), duration = 0, distance = 31.0, discount = 0.3),
-            trip(0, listOf(8, 7), duration = 7, distance = 14.0),
+ /*           trip(0, listOf(8, 7), duration = 7, distance = 14.0),
             trip(0, listOf(11, 7, 5, 8), duration = 4, distance = 1.0, discount = 0.4),
             trip(3, listOf(4, 8, 1), duration = 35, distance = 2.0),
             trip(3, listOf(1), duration = 35, distance = 30.0),
@@ -39,11 +39,22 @@ fun main() {
             trip(1, listOf(3, 4, 5), duration = 2, distance = 34.0, discount = 0.2),
             trip(1, listOf(4, 8, 7), duration = 5, distance = 31.0, discount = 0.1),
             trip(0, listOf(11, 4, 6), duration = 15, distance = 2.0),
+ */
             trip(3, listOf(9, 8, 6), duration = 24, distance = 17.0),
             trip(3, listOf(0), duration = 37, distance = 3.0, discount = 0.1),
             trip(1, listOf(5, 7), duration = 0, distance = 15.0, discount = 0.4))
 
-    val res = taxiPark.findFaithfulPassengers1(0).size
+    val durations = taxiPark.trips.map { it.duration }
+  //  println("duration $durations")
+    val g = durations.groupBy { it / 10 }
+   //  println("g ${g}")
+    val maxed =g.maxBy { ( _,list ) -> list.size }?.key
+    var res:IntRange?
+    if (maxed == null){
+        res = null
+    }else{
+        res = (maxed*10) until ((maxed+1)*10)
+    }
     println(res)
 }
 
