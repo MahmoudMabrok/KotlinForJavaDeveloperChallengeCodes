@@ -44,18 +44,8 @@ fun main() {
             trip(3, listOf(0), duration = 37, distance = 3.0, discount = 0.1),
             trip(1, listOf(5, 7), duration = 0, distance = 15.0, discount = 0.4))
 
-    val durations = taxiPark.trips.map { it.duration }
-  //  println("duration $durations")
-    val g = durations.groupBy { it / 10 }
-   //  println("g ${g}")
-    val maxed =g.maxBy { ( _,list ) -> list.size }?.key
-    var res:IntRange?
-    if (maxed == null){
-        res = null
-    }else{
-        res = (maxed*10) until ((maxed+1)*10)
-    }
-    println(res)
+    val durations = taxiPark.trips.groupBy { it.driver}
+    // todo  sum with each driver then get max 7
 }
 
 fun TaxiPark.findFaithfulPassengers1(minTrips: Int): Set<Passenger> {
