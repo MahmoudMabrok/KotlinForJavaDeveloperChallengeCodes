@@ -1,0 +1,169 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:61), pid=6848, tid=2508
+#
+# JRE version:  (8.0_45-b14) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.45-b02 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000001d9f800):  JavaThread "Unknown thread" [_thread_in_vm, id=2508, stack(0x00000000023f0000,0x00000000024f0000)]
+
+Stack: [0x00000000023f0000,0x00000000024f0000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x32b57a]
+V  [jvm.dll+0x279873]
+V  [jvm.dll+0x27a509]
+V  [jvm.dll+0x271825]
+V  [jvm.dll+0x1606]
+V  [jvm.dll+0x3c08c2]
+V  [jvm.dll+0x3eecb2]
+V  [jvm.dll+0x3ef1bc]
+V  [jvm.dll+0x3ea7a7]
+V  [jvm.dll+0xf2cf2]
+V  [jvm.dll+0x20f0c9]
+V  [jvm.dll+0x240e0a]
+V  [jvm.dll+0x15ba41]
+C  [java.exe+0x216e]
+C  [java.exe+0xcce7]
+C  [java.exe+0xcd7b]
+C  [kernel32.dll+0x1f56d]
+C  [ntdll.dll+0x33281]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x0000000001d9f800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=2508, stack(0x00000000023f0000,0x00000000024f0000)]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 18944K, used 327K [0x00000000eb400000, 0x00000000ec900000, 0x0000000100000000)
+  eden space 16384K, 2% used [0x00000000eb400000,0x00000000eb451ec8,0x00000000ec400000)
+  from space 2560K, 0% used [0x00000000ec680000,0x00000000ec680000,0x00000000ec900000)
+  to   space 2560K, 0% used [0x00000000ec400000,0x00000000ec400000,0x00000000ec680000)
+ ParOldGen       total 44032K, used 0K [0x00000000c1c00000, 0x00000000c4700000, 0x00000000eb400000)
+  object space 44032K, 0% used [0x00000000c1c00000,0x00000000c1c00000,0x00000000c4700000)
+ Metaspace       used 766K, capacity 4480K, committed 4480K, reserved 1056768K
+  class space    used 75K, capacity 384K, committed 384K, reserved 1048576K
+
+Card table byte_map: [0x0000000011d40000,0x0000000011f40000] byte_map_base: 0x0000000011732000
+
+Marking Bits: (ParMarkBitMap*) 0x000000005e0d4040
+ Begin Bits: [0x0000000012890000, 0x0000000013820000)
+ End Bits:   [0x0000000013820000, 0x00000000147b0000)
+
+Polling page: 0x0000000000130000
+
+CodeCache: size=245760Kb used=327Kb max_used=327Kb free=245432Kb
+ bounds [0x0000000002980000, 0x0000000002bf0000, 0x0000000011980000]
+ total_blobs=56 nmethods=0 adapters=37
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.074 loading class java/lang/Short
+Event: 0.074 loading class java/lang/Short done
+Event: 0.074 loading class java/lang/Integer
+Event: 0.075 loading class java/lang/Integer done
+Event: 0.075 loading class java/lang/Long
+Event: 0.075 loading class java/lang/Long done
+Event: 0.076 loading class java/lang/NullPointerException
+Event: 0.076 loading class java/lang/NullPointerException done
+Event: 0.076 loading class java/lang/ArithmeticException
+Event: 0.076 loading class java/lang/ArithmeticException done
+
+
+Dynamic libraries:
+0x000000013fc80000 - 0x000000013fcb7000 	C:\Program Files\Java\jdk1.8.0_45\bin\java.exe
+0x0000000076f80000 - 0x000000007712b000 	C:\Windows\SYSTEM32\ntdll.dll
+0x0000000076d60000 - 0x0000000076e7f000 	C:\Windows\system32\kernel32.dll
+0x000007fefd1c0000 - 0x000007fefd22b000 	C:\Windows\system32\KERNELBASE.dll
+0x000007fefe060000 - 0x000007fefe13b000 	C:\Windows\system32\ADVAPI32.dll
+0x000007fefd4c0000 - 0x000007fefd55f000 	C:\Windows\system32\msvcrt.dll
+0x000007fefd850000 - 0x000007fefd86f000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007fefdb90000 - 0x000007fefdcbe000 	C:\Windows\system32\RPCRT4.dll
+0x0000000076e80000 - 0x0000000076f7a000 	C:\Windows\system32\USER32.dll
+0x000007fefd9b0000 - 0x000007fefda17000 	C:\Windows\system32\GDI32.dll
+0x000007fefd840000 - 0x000007fefd84e000 	C:\Windows\system32\LPK.dll
+0x000007fefdcc0000 - 0x000007fefdd8a000 	C:\Windows\system32\USP10.dll
+0x000007fefb8b0000 - 0x000007fefbaa4000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7600.16385_none_fa645303170382f6\COMCTL32.dll
+0x000007fefdb10000 - 0x000007fefdb81000 	C:\Windows\system32\SHLWAPI.dll
+0x000007feff080000 - 0x000007feff0ae000 	C:\Windows\system32\IMM32.DLL
+0x000007fefd5b0000 - 0x000007fefd6b9000 	C:\Windows\system32\MSCTF.dll
+0x00000000712e0000 - 0x00000000713b2000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\msvcr100.dll
+0x000000005d8d0000 - 0x000000005e153000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\server\jvm.dll
+0x000007fee9f40000 - 0x000007fee9f49000 	C:\Windows\system32\WSOCK32.dll
+0x000007fefd560000 - 0x000007fefd5ad000 	C:\Windows\system32\WS2_32.dll
+0x000007fefdb00000 - 0x000007fefdb08000 	C:\Windows\system32\NSI.dll
+0x000007fefa490000 - 0x000007fefa4cb000 	C:\Windows\system32\WINMM.dll
+0x000007fefc050000 - 0x000007fefc05c000 	C:\Windows\system32\VERSION.dll
+0x0000000077140000 - 0x0000000077147000 	C:\Windows\system32\PSAPI.DLL
+0x0000000073a60000 - 0x0000000073a6f000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\verify.dll
+0x0000000071a70000 - 0x0000000071a99000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\java.dll
+0x0000000070510000 - 0x0000000070533000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\instrument.dll
+0x00000000739c0000 - 0x00000000739d6000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\zip.dll
+0x000007fef55f0000 - 0x000007fef5715000 	C:\Windows\system32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -javaagent:D:\Down19\275\Downloads\ideaIC-2019.2.2.win\lib\idea_rt.jar=52579:D:\Down19\275\Downloads\ideaIC-2019.2.2.win\bin -Dfile.encoding=UTF-8 
+java_command: mastermind.EvaluateGuessKt
+java_class_path (initial): C:\Program Files\Java\jdk1.8.0_45\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\rt.jar;C:\Users\motamed\IdeaProjects\Kotlin for Java Developers. Week 2\Mastermind\Task\build\classes\java\main;C:\Users\motamed\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk8\1.3.41\77652607ed82a49202d8a0b89de16994b61bdd75\kotlin-stdlib-jdk8-1.3.41.jar;C:\Users\motamed\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk7\1.3.41\a1f331124ba069a09e964ad2640c36f140f2c758\kotlin-stdlib-jdk7-1.3.41.jar;C:\Users\motamed\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib\1.3.41\e24bd38de28a326cce8b1f0d61e809e9a92dad6a\kotlin-stdlib-1.3.41.jar;C:\Users\motamed\.gradle\caches\modules-2\files-2.1\org.jetbrains.k
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_45
+PATH=C:\Python27;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Git\cmd;C:\Ruby26-x64\bin;C:\Python27;C:\Program Files\swipl\bin;C:\Program Files\swipl\lib\jpl;C:\Users\motamed\AppData\Local\Android\sdk\platform-tools;F:\dowal\flutter_windows_v1.0.0-stable\flutter\bin;C:\Users\motamed\AppData\Roaming\npm;D:\avd;C:\Program Files\JetBrains\PyCharm 2018.3.1\bin;;C:\Program Files (x86)\CodeBlocks\MinGW\bin;F:\dowal\youtube-dl.exe;C:\Python27\Lib\site-packages;C:\Python27\Scripts;C:\Program Files\heroku\bin;C:\Program Files\heroku\client\bin
+USERNAME=motamed
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7600 (6.1.7600.16385)
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, clmul, erms, ht, tsc, tscinvbit, tscinv
+
+Memory: 4k page, physical 4078956k(631948k free), swap 5125636k(5512k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.45-b02) for windows-amd64 JRE (1.8.0_45-b14), built on Apr 10 2015 10:34:15 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Wed Sep 25 17:22:15 2019
+elapsed time: 0 seconds (0d 0h 0m 0s)
+

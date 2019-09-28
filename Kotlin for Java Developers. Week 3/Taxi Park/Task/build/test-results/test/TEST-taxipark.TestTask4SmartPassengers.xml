@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="taxipark.TestTask4SmartPassengers" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-09-27T21:13:27" hostname="motamed-PC" time="0.075">
+  <properties/>
+  <testcase name="test03" classname="taxipark.TestTask4SmartPassengers" time="0.075"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
