@@ -22,7 +22,8 @@ fun trip(driverIndex: Int, passenger: Int, duration: Int = 10, distance: Double 
 
 fun main() {
 
-    val taxiPark = taxiPark(0..3, 0..11, trip(3, listOf(9), duration = 4, distance = 26.0, discount = 0.3),
+    val taxiPark = taxiPark(0..6, 0..11,
+            trip(3, listOf(9), duration = 4, distance = 26.0, discount = 0.3),
             trip(0, listOf(7), duration = 16, distance = 34.0, discount = 0.2),
             trip(2, listOf(9), duration = 19, distance = 16.0),
             trip(1, listOf(4, 6, 3), duration = 0, distance = 3.0),
@@ -30,7 +31,7 @@ fun main() {
             trip(3, listOf(11, 9), duration = 20, distance = 22.0),
             trip(1, listOf(3, 4), duration = 18, distance = 19.0),
             trip(3, listOf(4, 7), duration = 0, distance = 31.0, discount = 0.3),
- /*           trip(0, listOf(8, 7), duration = 7, distance = 14.0),
+            trip(0, listOf(8, 7), duration = 7, distance = 14.0),
             trip(0, listOf(11, 7, 5, 8), duration = 4, distance = 1.0, discount = 0.4),
             trip(3, listOf(4, 8, 1), duration = 35, distance = 2.0),
             trip(3, listOf(1), duration = 35, distance = 30.0),
@@ -39,29 +40,32 @@ fun main() {
             trip(1, listOf(3, 4, 5), duration = 2, distance = 34.0, discount = 0.2),
             trip(1, listOf(4, 8, 7), duration = 5, distance = 31.0, discount = 0.1),
             trip(0, listOf(11, 4, 6), duration = 15, distance = 2.0),
- */
             trip(3, listOf(9, 8, 6), duration = 24, distance = 17.0),
             trip(3, listOf(0), duration = 37, distance = 3.0, discount = 0.1),
             trip(1, listOf(5, 7), duration = 0, distance = 15.0, discount = 0.4))
 
-    val durations = taxiPark.trips.groupBy { it.driver}
-    // todo  sum with each driver then get max 7
-}
+    var durations = taxiPark.trips
+            .map{Pair(it.driver , it.cost )} // pair of driver, cost
+            .groupBy { it.first } // driver , list of costs
+            .mapValues { (_ , list) -> list.sumBy { it.second.toInt() } } // driver , sum of costs
 
-fun TaxiPark.findFaithfulPassengers1(minTrips: Int): Set<Passenger> {
-    // challenge is with passenger that not took 0 trip
-    // get list of all passenger
-    val allPass :Set<Passenger> = this.allPassengers
-    // flat all passengers
-    val pass = this.trips.flatMap{ it.passengers}
-    // group them by its passenger
-    val grouped = pass.groupBy {it}
-    // filter them return a set pf passenger
-    val filteredPassenger:Set<Passenger> = grouped.filter { (_ , list) ->
-        list.size >= minTrips }.keys
-    // case for 0-trip
-    // filtered.keys
-    val res = allPass.filter{ it in filteredPassenger || minTrips == 0}
-    return res.toSet()
+    durations = durations.toMutableMap()
+    // get driver with no trips
+    val aa = taxiPark.allDrivers.filter { it !in durations.keys }
+    // add them to map with 0
+    for ( dr in aa ){
+       durations.put(dr,0 )
+    }
+
+    val totalSum = durations.values.sum()
+    println("sum $totalSum")
+
+    val nOfDriver = taxiPark.allDrivers.size
+    val nOfTop = (0.20 * nOfDriver).toInt() // floor it
+
+    val incomeFromTop = durations.map { it.value}.sortedByDescending { it}.take(nOfTop).sum()
+    println("n od driver  $nOfDriver ")
+    println("total is $totalSum top 20% $nOfTop contain income $incomeFromTop  is : ${incomeFromTop >= (0.8 * totalSum)}")
+
 }
 

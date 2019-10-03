@@ -85,6 +85,28 @@ fun TaxiPark.findTheMostFrequentTripDurationPeriod(): IntRange? {
  * Check whether 20% of the drivers contribute 80% of the income.
  */
 fun TaxiPark.checkParetoPrinciple(): Boolean {
+    if (this.trips.size != 0 ) {
+        var durations = this.trips
+                .map{Pair(it.driver , it.cost )} // pair of driver, cost
+                .groupBy { it.first } // driver , list of costs
+                .mapValues { (_ , list) -> list.sumBy { it.second.toInt() } } // driver , sum of costs
 
-    TODO()
+
+        durations = durations.toMutableMap()
+        // get driver with no trips
+        val aa = this.allDrivers.filter { it !in durations.keys }
+        // add them to map with 0
+        for ( dr in aa ){
+            durations.put(dr,0 )
+        }
+
+        val totalSum = durations.values.sum()
+        val nOfDriver = durations.keys.size
+        val nOfTop = (0.2 * nOfDriver).toInt() // floor it
+
+        val incomeFromTop = durations.map { it.value}.sortedByDescending { it}.take(nOfTop).sum()
+        return incomeFromTop >= (0.8 * totalSum)
+    } else {
+        return false
+    }
 }
