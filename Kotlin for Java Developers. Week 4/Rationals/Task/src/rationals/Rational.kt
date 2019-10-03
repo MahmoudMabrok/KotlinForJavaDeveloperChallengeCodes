@@ -1,8 +1,56 @@
 package rationals
 
+import java.math.BigInteger
+
+class Rational(val numerator: BigInteger, val donmerator: BigInteger) {
+    override fun toString(): String {
+        return ("$numerator/$donmerator").toString()
+    }
+}
+
+fun String.toRational(): Rational {
+    val pos = this.indexOf('/')
+    return if (pos != -1) {
+        val n = this.substring(0, pos).toBigInteger()
+        val d = this.substring(pos + 1).toBigInteger()
+        Rational(n, d)
+    } else {
+        val n = this.toBigInteger()
+        val d = "1".toBigInteger()
+        Rational(n, d)
+    }
+}
+
+// use infix modifier
+infix fun Int.divBy(other: Int): Rational = Rational(this.toBigInteger(), other.toBigInteger())
+
+infix fun Long.divBy(other: Long): Rational = Rational(this.toBigInteger(), other.toBigInteger())
+infix fun BigInteger.divBy(other: BigInteger): Rational = Rational(this, other)
+
+operator fun Rational.plus(other: Rational): Rational =
+        Rational(this.numerator.plus(other.numerator),
+                this.donmerator.plus(other.donmerator))
+
+operator fun Rational.minus(other: Rational): Rational =
+        Rational(this.numerator.minus(other.numerator),
+                this.donmerator.minus(other.donmerator))
+
+operator fun Rational.times(other: Rational): Rational =
+        Rational(this.numerator.multiply(other.numerator),
+                this.donmerator.multiply(other.donmerator))
+
+operator fun Rational.div(other: Rational): Rational {
+    Rational(this.numerator.div(other.numerator),
+            this.donmerator.multiply(other.donmerator))
+}
+
+operator fun Rational.unaryMinus(): Rational = Rational(numerator.multiply(-1.toBigInteger())
+        , donmerator)
 
 
 fun main() {
+
+    println("21/6".toRational())
     val half = 1 divBy 2
     val third = 1 divBy 3
 
