@@ -106,6 +106,20 @@
                               </TaskFile>
                             </value>
                           </entry>
+                          <entry key="src/rationals/Inline.kt">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="true" />
+                                <option name="name" value="src/rationals/Inline.kt" />
+                                <option name="text" value="" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="true" />
+                              </TaskFile>
+                            </value>
+                          </entry>
                         </map>
                       </option>
                       <option name="updateDate" value="0" />
@@ -170,12 +184,12 @@
                                         </MyInitialState>
                                       </option>
                                       <option name="initializedFromDependency" value="false" />
-                                      <option name="length" value="6" />
-                                      <option name="offset" value="90" />
+                                      <option name="length" value="0" />
+                                      <option name="offset" value="771" />
                                       <option name="placeholderDependency" />
                                       <option name="placeholderText" value="TODO()" />
                                       <option name="possibleAnswer" value="" />
-                                      <option name="selected" value="false" />
+                                      <option name="selected" value="true" />
                                       <option name="status" value="Unchecked" />
                                       <option name="studentAnswer" />
                                     </AnswerPlaceholder>
@@ -192,7 +206,7 @@
                                       </option>
                                       <option name="initializedFromDependency" value="false" />
                                       <option name="length" value="6" />
-                                      <option name="offset" value="149" />
+                                      <option name="offset" value="824" />
                                       <option name="placeholderDependency" />
                                       <option name="placeholderText" value="TODO()" />
                                       <option name="possibleAnswer" value="" />
@@ -202,7 +216,7 @@
                                     </AnswerPlaceholder>
                                   </list>
                                 </option>
-                                <option name="highlightErrors" value="false" />
+                                <option name="highlightErrors" value="true" />
                                 <option name="name" value="src/board/BoardImpl.kt" />
                                 <option name="text" value="package board&#10;&#10;import board.Direction.*&#10;&#10;fun createSquareBoard(width: Int): SquareBoard = TODO()&#10;fun &lt;T&gt; createGameBoard(width: Int): GameBoard&lt;T&gt; = TODO()&#10;&#10;" />
                                 <option name="trackChanges" value="true" />

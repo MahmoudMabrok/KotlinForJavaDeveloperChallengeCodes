@@ -13,6 +13,13 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin File" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectId" id="1RRA70qi1OYpwJrRYv6NnctbDzC" />
   <component name="PropertiesComponent">
     <property name="show.inlinked.gradle.project.popup" value="false" />
@@ -29,7 +36,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Kotlin.rationals.RationalKt">
+    <configuration name="rationals.InlineKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="Rationals-Task_main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="rationals.InlineKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="rationals.RationalKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="Rationals-Task_main" />
       <option name="VM_PARAMETERS" />
@@ -46,6 +66,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.rationals.RationalKt" />
+        <item itemvalue="Kotlin.rationals.InlineKt" />
       </list>
     </recent_temporary>
   </component>

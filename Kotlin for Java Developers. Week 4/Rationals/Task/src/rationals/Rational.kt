@@ -2,11 +2,13 @@ package rationals
 
 import java.math.BigInteger
 
-class Rational(val numerator: BigInteger, val donmerator: BigInteger) {
+class Rational(var numerator: BigInteger, var donmerator: BigInteger) {
     override fun toString(): String {
-        return ("$numerator/$donmerator").toString()
+        val gcd = numerator.gcd(donmerator)
+        donmerator /= gcd
+        numerator /= gcd
+        return if (donmerator != 1.toBigInteger()) "$numerator/$donmerator" else "$numerator"
     }
-
     override fun equals(other: Any?): Boolean {
         return numerator.equals((other as? Rational)?.numerator)
     }
@@ -40,23 +42,36 @@ operator fun Rational.minus(other: Rational): Rational {
     val newNumerator = (numerator.multiply(other.donmerator)).minus((donmerator.multiply(other.numerator)))
     return Rational(newNumerator, this.donmerator.multiply(other.donmerator))
 }
+
 operator fun Rational.times(other: Rational): Rational =
         Rational(this.numerator.multiply(other.numerator),
                 this.donmerator.multiply(other.donmerator))
 
 operator fun Rational.div(other: Rational): Rational {
-    return Rational(this.numerator.div(other.numerator),
-            this.donmerator.multiply(other.donmerator))
+    return Rational(this.numerator.multiply(other.donmerator),
+            this.donmerator.multiply(other.numerator))
 }
 
-operator fun Rational.unaryMinus(): Rational = Rational(numerator.multiply(-1.toBigInteger())
-        , donmerator)
+operator fun Rational.unaryMinus(): Rational = Rational(
+        numerator.multiply((-1).toBigInteger())
+        , donmerator )
+
+operator fun Rational.compareTo(o:Rational): Int  {
+    return 0
+}
+
+operator fun Rational.rangeTo(o:Rational): IntRange  {
+    return 0..1
+}
+
+operator fun Rational.contains(o:Rational): Boolean  {
+    return true
+}
+
 
 // todo check add, sub , div with cond
 
 fun main() {
-
-    println("21/6".toRational())
     val half = 1 divBy 2
     val third = 1 divBy 3
 
@@ -70,7 +85,7 @@ fun main() {
     println(1 divBy 6 == product)
 
     val quotient: Rational = half / third
-    println(3 divBy 2 == quotient)
+    println("$half $third  ${3 divBy 2}  $quotient  ::  ${3 divBy 2 == quotient}")
 
     val negation: Rational = -half
     println(-1 divBy 2 == negation)
@@ -79,7 +94,6 @@ fun main() {
     println((-2 divBy 4).toString() == "-1/2")
     println("117/1098".toRational().toString() == "13/122")
 
-    /*
     val twoThirds = 2 divBy 3
     println(half < twoThirds)
 
@@ -89,6 +103,5 @@ fun main() {
 
     println("912016490186296920119201192141970416029".toBigInteger() divBy
             "1824032980372593840238402384283940832058".toBigInteger() == 1 divBy 2)
-*/
 
 }
