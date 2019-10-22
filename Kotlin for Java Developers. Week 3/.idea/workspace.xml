@@ -49,12 +49,12 @@
     </option>
   </component>
   <component name="RunManager" selected="Gradle.TestTask6ParetoPrinciple">
-    <configuration name="TestTask3FrequentPassengers" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestTask1FakeDrivers" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;taxipark.TestTask3FrequentPassengers&quot;" />
+        <option name="scriptParameters" value="--tests &quot;taxipark.TestTask1FakeDrivers&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -69,12 +69,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TestTask4SmartPassengers.test03" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestTask4SmartPassengers" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;taxipark.TestTask4SmartPassengers.test03&quot;" />
+        <option name="scriptParameters" value="--tests &quot;taxipark.TestTask4SmartPassengers&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -145,10 +145,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.TestTask6ParetoPrinciple" />
-        <item itemvalue="Kotlin.taxipark.TestKt" />
         <item itemvalue="Gradle.TestTask5TheMostFrequentTripDurationPeriod" />
-        <item itemvalue="Gradle.TestTask4SmartPassengers.test03" />
-        <item itemvalue="Gradle.TestTask3FrequentPassengers" />
+        <item itemvalue="Gradle.TestTask4SmartPassengers" />
+        <item itemvalue="Kotlin.taxipark.TestKt" />
+        <item itemvalue="Gradle.TestTask1FakeDrivers" />
       </list>
     </recent_temporary>
   </component>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="taxipark.TestTask6ParetoPrinciple" tests="11" skipped="0" failures="0" errors="0" timestamp="2019-10-03T14:50:49" hostname="motamed-PC" time="0.526">
+<testsuite name="taxipark.TestTask6ParetoPrinciple" tests="11" skipped="0" failures="0" errors="0" timestamp="2019-10-22T09:09:22" hostname="motamed-PC" time="0.015">
   <properties/>
-  <testcase name="test1" classname="taxipark.TestTask6ParetoPrinciple" time="0.362"/>
+  <testcase name="test1" classname="taxipark.TestTask6ParetoPrinciple" time="0.006"/>
   <testcase name="test2" classname="taxipark.TestTask6ParetoPrinciple" time="0.001"/>
-  <testcase name="test3" classname="taxipark.TestTask6ParetoPrinciple" time="0.002"/>
-  <testcase name="test4" classname="taxipark.TestTask6ParetoPrinciple" time="0.002"/>
-  <testcase name="test5" classname="taxipark.TestTask6ParetoPrinciple" time="0.006"/>
-  <testcase name="test7" classname="taxipark.TestTask6ParetoPrinciple" time="0.071"/>
-  <testcase name="test8" classname="taxipark.TestTask6ParetoPrinciple" time="0.038"/>
-  <testcase name="test9" classname="taxipark.TestTask6ParetoPrinciple" time="0.009"/>
-  <testcase name="testParetoPrincipleFails" classname="taxipark.TestTask6ParetoPrinciple" time="0.002"/>
-  <testcase name="testParetoPrincipleNoTrips" classname="taxipark.TestTask6ParetoPrinciple" time="0.008"/>
+  <testcase name="test3" classname="taxipark.TestTask6ParetoPrinciple" time="0.0"/>
+  <testcase name="test4" classname="taxipark.TestTask6ParetoPrinciple" time="0.0"/>
+  <testcase name="test5" classname="taxipark.TestTask6ParetoPrinciple" time="0.0"/>
+  <testcase name="test7" classname="taxipark.TestTask6ParetoPrinciple" time="0.001"/>
+  <testcase name="test8" classname="taxipark.TestTask6ParetoPrinciple" time="0.001"/>
+  <testcase name="test9" classname="taxipark.TestTask6ParetoPrinciple" time="0.001"/>
+  <testcase name="testParetoPrincipleFails" classname="taxipark.TestTask6ParetoPrinciple" time="0.0"/>
+  <testcase name="testParetoPrincipleNoTrips" classname="taxipark.TestTask6ParetoPrinciple" time="0.0"/>
   <testcase name="testParetoPrincipleSucceeds" classname="taxipark.TestTask6ParetoPrinciple" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

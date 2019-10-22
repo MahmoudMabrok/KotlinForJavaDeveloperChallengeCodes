@@ -22,6 +22,7 @@ fun trip(driverIndex: Int, passenger: Int, duration: Int = 10, distance: Double 
 
 fun main() {
 
+
     val taxiPark = taxiPark(0..2, 0..2,
             trip(2, listOf(2, 1), duration = 14, distance = 10.0, discount = 0.4),
             trip(1, listOf(1, 2, 0), duration = 20, distance = 26.0),
@@ -36,8 +37,9 @@ fun main() {
             trip(1, listOf(0, 2), duration = 25, distance = 9.0),
             trip(2, listOf(2, 0), duration = 36, distance = 23.0, discount = 0.2))
 
+
     var passengers = taxiPark.allPassengers
-    var data = passengers.map { Pair(it , 0.0 )}
+    var data = passengers.map { Pair(it, 0.0) }
     /*
     * some consideration
     *  majority of each passenger trips
@@ -47,23 +49,22 @@ fun main() {
     var hasDiscount = taxiPark.trips
             .filter { it.discount != null }
             .flatMap { it.passengers } // map trip into pass then flat it
-            .groupBy { it} // group each pass with its trips
-            .map { Pair(it.key,it.value.size)}
+            .groupBy { it } // group each pass with its trips
+            .map { Pair(it.key, it.value.size) }
     println(hasDiscount)
     var hasNoDiscount = taxiPark.trips
+            .filter { it.discount == null }
             .flatMap { it.passengers } // map trip into pass then flat it
-            .groupBy { it} // group each pass with its trips
-            .map { Pair(it.key,it.value.size)}
+            .groupBy { it } // group each pass with its trips
+            .map { Pair(it.key, it.value.size) }
     println(hasNoDiscount)
 
     data = data.map {
         var has = hasDiscount.find { pass -> pass.first == it.first }?.second ?: 0
         var nohas = hasNoDiscount.find { pass -> pass.first == it.first }?.second ?: 0
-        val per:Double = if (nohas+ has == 0 ) 0.0 else ((has / ((has + nohas)*1.0) ) )
-        /*if (nohas != 0  && has != 0 ){
-            println("-- $has $nohas $per")
-        }*/
-        Pair(it.first,per)
+        val per: Double = (has - nohas).toDouble()
+
+        Pair(it.first, per)
     }
 
     println(data)

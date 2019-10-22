@@ -1,26 +1,12 @@
-[]
-[]
-[(Passenger(name=P-1), 1)]
-6[(Passenger(name=P-1), 1), (Passenger(name=P-2), 1)]
-j[(Passenger(name=P-5), 1), (Passenger(name=P-9), 1), (Passenger(name=P-2), 1), (Passenger(name=P-3), 1)]
-ì[(Passenger(name=P-2), 2), (Passenger(name=P-5), 3), (Passenger(name=P-9), 3), (Passenger(name=P-3), 3), (Passenger(name=P-8), 3), (Passenger(name=P-4), 3), (Passenger(name=P-1), 1), (Passenger(name=P-0), 1), (Passenger(name=P-7), 1)]
-P[(Passenger(name=P-2), 6), (Passenger(name=P-1), 2), (Passenger(name=P-0), 4)]
-Q[(Passenger(name=P-2), 10), (Passenger(name=P-1), 5), (Passenger(name=P-0), 8)]
-P[(Passenger(name=P-1), 5), (Passenger(name=P-0), 3), (Passenger(name=P-2), 2)]
-P[(Passenger(name=P-0), 5), (Passenger(name=P-2), 5), (Passenger(name=P-1), 7)]
-P[(Passenger(name=P-1), 4), (Passenger(name=P-2), 3), (Passenger(name=P-0), 2)]
-P[(Passenger(name=P-0), 5), (Passenger(name=P-1), 8), (Passenger(name=P-2), 7)]
-P[(Passenger(name=P-2), 5), (Passenger(name=P-0), 3), (Passenger(name=P-1), 1)]
-P[(Passenger(name=P-1), 7), (Passenger(name=P-2), 7), (Passenger(name=P-0), 6)]
-	P[(Passenger(name=P-2), 3), (Passenger(name=P-0), 1), (Passenger(name=P-1), 2)]
-	P[(Passenger(name=P-2), 7), (Passenger(name=P-0), 3), (Passenger(name=P-1), 7)]
-
-6[(Passenger(name=P-2), 3), (Passenger(name=P-1), 4)]
-
-P[(Passenger(name=P-0), 5), (Passenger(name=P-2), 7), (Passenger(name=P-1), 9)]
-†[(Passenger(name=P-7), 7), (Passenger(name=P-4), 3), (Passenger(name=P-0), 5), (Passenger(name=P-5), 6), (Passenger(name=P-9), 5), (Passenger(name=P-2), 3), (Passenger(name=P-1), 3), (Passenger(name=P-8), 3), (Passenger(name=P-6), 3), (Passenger(name=P-3), 2)]
-‰[(Passenger(name=P-7), 14), (Passenger(name=P-4), 8), (Passenger(name=P-0), 7), (Passenger(name=P-5), 11), (Passenger(name=P-9), 12), (Passenger(name=P-2), 5), (Passenger(name=P-1), 5), (Passenger(name=P-3), 4), (Passenger(name=P-6), 8), (Passenger(name=P-8), 6)]
-†[(Passenger(name=P-4), 4), (Passenger(name=P-3), 5), (Passenger(name=P-8), 9), (Passenger(name=P-7), 5), (Passenger(name=P-2), 2), (Passenger(name=P-6), 6), (Passenger(name=P-5), 3), (Passenger(name=P-1), 2), (Passenger(name=P-9), 2), (Passenger(name=P-0), 1)]
-‰[(Passenger(name=P-5), 7), (Passenger(name=P-1), 5), (Passenger(name=P-0), 2), (Passenger(name=P-3), 8), (Passenger(name=P-8), 14), (Passenger(name=P-2), 6), (Passenger(name=P-4), 8), (Passenger(name=P-7), 12), (Passenger(name=P-6), 12), (Passenger(name=P-9), 9)]
-[(Passenger(name=P-4), 1), (Passenger(name=P-5), 3), (Passenger(name=P-2), 1), (Passenger(name=P-9), 1), (Passenger(name=P-6), 1), (Passenger(name=P-7), 1)]
-ì[(Passenger(name=P-9), 4), (Passenger(name=P-0), 2), (Passenger(name=P-5), 4), (Passenger(name=P-6), 2), (Passenger(name=P-3), 2), (Passenger(name=P-4), 2), (Passenger(name=P-1), 1), (Passenger(name=P-2), 2), (Passenger(name=P-7), 1)]
+[]
+ [(Passenger(name=P-2), 1)]
+!ì[(Passenger(name=P-2), 1), (Passenger(name=P-5), 2), (Passenger(name=P-3), 2), (Passenger(name=P-8), 3), (Passenger(name=P-4), 3), (Passenger(name=P-1), 1), (Passenger(name=P-0), 1), (Passenger(name=P-9), 2), (Passenger(name=P-7), 1)]
+"P[(Passenger(name=P-1), 3), (Passenger(name=P-2), 4), (Passenger(name=P-0), 4)]
+#P[(Passenger(name=P-0), 2), (Passenger(name=P-2), 3), (Passenger(name=P-1), 2)]
+$P[(Passenger(name=P-0), 3), (Passenger(name=P-1), 4), (Passenger(name=P-2), 4)]
+%P[(Passenger(name=P-1), 6), (Passenger(name=P-2), 2), (Passenger(name=P-0), 3)]
+&P[(Passenger(name=P-1), 5), (Passenger(name=P-0), 2), (Passenger(name=P-2), 4)]
+'P[(Passenger(name=P-0), 5), (Passenger(name=P-1), 5), (Passenger(name=P-2), 4)]
+(†[(Passenger(name=P-7), 7), (Passenger(name=P-5), 5), (Passenger(name=P-9), 7), (Passenger(name=P-3), 2), (Passenger(name=P-2), 2), (Passenger(name=P-6), 5), (Passenger(name=P-4), 5), (Passenger(name=P-8), 3), (Passenger(name=P-1), 2), (Passenger(name=P-0), 2)]
+)†[(Passenger(name=P-5), 4), (Passenger(name=P-1), 3), (Passenger(name=P-0), 1), (Passenger(name=P-3), 3), (Passenger(name=P-8), 5), (Passenger(name=P-2), 4), (Passenger(name=P-7), 7), (Passenger(name=P-6), 6), (Passenger(name=P-4), 4), (Passenger(name=P-9), 7)]
+*Ò[(Passenger(name=P-9), 3), (Passenger(name=P-0), 2), (Passenger(name=P-5), 1), (Passenger(name=P-6), 1), (Passenger(name=P-3), 2), (Passenger(name=P-4), 1), (Passenger(name=P-1), 1), (Passenger(name=P-2), 1)]
