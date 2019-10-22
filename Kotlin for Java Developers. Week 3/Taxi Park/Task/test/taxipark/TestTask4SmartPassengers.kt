@@ -18,7 +18,9 @@ class TestTask4SmartPassengers {
 
     @Test
     fun test01() {
-        testSmartPassengers(setOf(1), taxiPark(1..2, 1..2, trip(1, 1, discount = 0.1), trip(2, 2)))
+        testSmartPassengers(setOf(1), taxiPark(1..2,
+                1..2, trip(1,
+                1, discount = 0.1), trip(2, 2)))
     }
 
 

@@ -49,13 +49,35 @@ fun TaxiPark.findFrequentPassengers(driver: Driver): Set<Passenger> {
  */
 fun TaxiPark.findSmartPassengers(): Set<Passenger> {
     // filter trips to discounted trip  then flat all passengers
-    return this.trips
-            .filter { it.discount != null } // filter that has discount
+    var passengers = this.allPassengers
+    var data = passengers.map { Pair(it , 0.0 )}
+    /*
+    * some consideration
+    *  majority of each passenger trips
+    * so get each pass with percentage of trips with discount then
+    * get max one
+    * */
+    var hasDiscount = this.trips
+            .filter { it.discount != null }
             .flatMap { it.passengers } // map trip into pass then flat it
             .groupBy { it} // group each pass with its trips
-            .maxBy { (_, t) -> t.size} // get max one by max of count of trips(size represent n trip)
-            ?.value!! // get value
-            .toSet() // convert to set
+            .map { Pair(it.key,it.value.size)}
+    println(hasDiscount)
+    var hasNoDiscount = this.trips
+            .flatMap { it.passengers } // map trip into pass then flat it
+            .groupBy { it} // group each pass with its trips
+            .map { Pair(it.key,it.value.size)}
+    println(hasNoDiscount)
+
+    data = data.map {
+        var has = hasDiscount.find { pass -> pass.first == it.first }?.second ?: 0
+        var nohas = hasNoDiscount.find { pass -> pass.first == it.first }?.second ?: 0
+        val per:Double = if (nohas+ has == 0 ) 0.0 else ((has / ((has + nohas)*1.0) ) )
+        Pair(it.first,per)
+    }
+
+    return data.filter { it.second >= 0.5 }.map { it.first}.toSet()
+
 }
 
 /*

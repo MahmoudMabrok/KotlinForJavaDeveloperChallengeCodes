@@ -22,50 +22,52 @@ fun trip(driverIndex: Int, passenger: Int, duration: Int = 10, distance: Double 
 
 fun main() {
 
-    val taxiPark = taxiPark(0..6, 0..11,
-            trip(3, listOf(9), duration = 4, distance = 26.0, discount = 0.3),
-            trip(0, listOf(7), duration = 16, distance = 34.0, discount = 0.2),
-            trip(2, listOf(9), duration = 19, distance = 16.0),
-            trip(1, listOf(4, 6, 3), duration = 0, distance = 3.0),
-            trip(3, listOf(6, 11), duration = 33, distance = 10.0),
-            trip(3, listOf(11, 9), duration = 20, distance = 22.0),
-            trip(1, listOf(3, 4), duration = 18, distance = 19.0),
-            trip(3, listOf(4, 7), duration = 0, distance = 31.0, discount = 0.3),
-            trip(0, listOf(8, 7), duration = 7, distance = 14.0),
-            trip(0, listOf(11, 7, 5, 8), duration = 4, distance = 1.0, discount = 0.4),
-            trip(3, listOf(4, 8, 1), duration = 35, distance = 2.0),
-            trip(3, listOf(1), duration = 35, distance = 30.0),
-            trip(2, listOf(6, 1), duration = 23, distance = 33.0),
-            trip(3, listOf(7, 6), duration = 38, distance = 9.0),
-            trip(1, listOf(3, 4, 5), duration = 2, distance = 34.0, discount = 0.2),
-            trip(1, listOf(4, 8, 7), duration = 5, distance = 31.0, discount = 0.1),
-            trip(0, listOf(11, 4, 6), duration = 15, distance = 2.0),
-            trip(3, listOf(9, 8, 6), duration = 24, distance = 17.0),
-            trip(3, listOf(0), duration = 37, distance = 3.0, discount = 0.1),
-            trip(1, listOf(5, 7), duration = 0, distance = 15.0, discount = 0.4))
+    val taxiPark = taxiPark(0..2, 0..2,
+            trip(2, listOf(2, 1), duration = 14, distance = 10.0, discount = 0.4),
+            trip(1, listOf(1, 2, 0), duration = 20, distance = 26.0),
+            trip(0, listOf(2, 0), duration = 15, distance = 14.0, discount = 0.4),
+            trip(0, listOf(2, 1), duration = 4, distance = 17.0, discount = 0.2),
+            trip(1, listOf(0, 1, 2), duration = 35, distance = 23.0),
+            trip(2, listOf(1), duration = 28, distance = 5.0),
+            trip(0, listOf(0), duration = 30, distance = 25.0, discount = 0.3),
+            trip(0, listOf(2, 0), duration = 24, distance = 13.0),
+            trip(0, listOf(0, 2), duration = 5, distance = 5.0, discount = 0.2),
+            trip(0, listOf(2), duration = 39, distance = 29.0, discount = 0.1),
+            trip(1, listOf(0, 2), duration = 25, distance = 9.0),
+            trip(2, listOf(2, 0), duration = 36, distance = 23.0, discount = 0.2))
 
-    var durations = taxiPark.trips
-            .map{Pair(it.driver , it.cost )} // pair of driver, cost
-            .groupBy { it.first } // driver , list of costs
-            .mapValues { (_ , list) -> list.sumBy { it.second.toInt() } } // driver , sum of costs
+    var passengers = taxiPark.allPassengers
+    var data = passengers.map { Pair(it , 0.0 )}
+    /*
+    * some consideration
+    *  majority of each passenger trips
+    * so get each pass with percentage of trips with discount then
+    * get max one
+    * */
+    var hasDiscount = taxiPark.trips
+            .filter { it.discount != null }
+            .flatMap { it.passengers } // map trip into pass then flat it
+            .groupBy { it} // group each pass with its trips
+            .map { Pair(it.key,it.value.size)}
+    println(hasDiscount)
+    var hasNoDiscount = taxiPark.trips
+            .flatMap { it.passengers } // map trip into pass then flat it
+            .groupBy { it} // group each pass with its trips
+            .map { Pair(it.key,it.value.size)}
+    println(hasNoDiscount)
 
-    durations = durations.toMutableMap()
-    // get driver with no trips
-    val aa = taxiPark.allDrivers.filter { it !in durations.keys }
-    // add them to map with 0
-    for ( dr in aa ){
-       durations.put(dr,0 )
+    data = data.map {
+        var has = hasDiscount.find { pass -> pass.first == it.first }?.second ?: 0
+        var nohas = hasNoDiscount.find { pass -> pass.first == it.first }?.second ?: 0
+        val per:Double = if (nohas+ has == 0 ) 0.0 else ((has / ((has + nohas)*1.0) ) )
+        /*if (nohas != 0  && has != 0 ){
+            println("-- $has $nohas $per")
+        }*/
+        Pair(it.first,per)
     }
 
-    val totalSum = durations.values.sum()
-    println("sum $totalSum")
+    println(data)
 
-    val nOfDriver = taxiPark.allDrivers.size
-    val nOfTop = (0.20 * nOfDriver).toInt() // floor it
-
-    val incomeFromTop = durations.map { it.value}.sortedByDescending { it}.take(nOfTop).sum()
-    println("n od driver  $nOfDriver ")
-    println("total is $totalSum top 20% $nOfTop contain income $incomeFromTop  is : ${incomeFromTop >= (0.8 * totalSum)}")
 
 }
 
